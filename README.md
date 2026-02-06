@@ -1,75 +1,79 @@
-# Risk Analysis ML Pipeline with PostgreSQL
+# ML Risk Analysis with PostgreSQL Integration
 
-##  Project Overview
+## Project Overview
+This project implements a **Machine Learning pipeline** to predict **high-risk customers** based on their account and transaction data.  
+It fetches data directly from **PostgreSQL**, performs feature engineering, trains a model, and saves predictions back to the database.  
 
-This project is an end-to-end **Machine Learning pipeline** that predicts high-risk customers for financial institutions using historical account and transaction data. The pipeline integrates directly with **PostgreSQL**, making it production-ready.
-
-- **Input:** Customer, account, and transaction data from PostgreSQL
-- **Processing:** Feature engineering, encoding, scaling
-- **Model:** Logistic Regression (predicts high-risk customers)
-- **Output:** Predictions stored back in PostgreSQL and CSV files
-
----
-
-## Tech Stack
-
-- **Language:** Python 3.11  
-- **Libraries:** pandas, scikit-learn, joblib, psycopg2, SQLAlchemy  
-- **Database:** PostgreSQL  
-- **Version Control:** Git & GitHub
+**Key Highlights:**
+- End-to-end ML pipeline integrated with PostgreSQL
+- Automated feature engineering
+- Logistic Regression / Random Forest model
+- Predictions stored in PostgreSQL and CSV
+- Ready for new customer data
 
 ---
 
-## Database Schema
+## Installation & Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jaydave009/risk-analysis-ml-postgres.git
+   cd risk-analysis-ml-postgres
+   Create a virtual environment and activate it:
+2. Create a virtual environment and activate it:
+    python -m venv .venv
+   .venv\Scripts\activate  # Windows
+    source .venv/bin/activate  # Linux/Mac 
+3.  Install dependencies:
+    pip install -r requirements.txt
+4.  Ensure PostgreSQL is running and the tables below exist:
+    customers,accounts,transactions
+    
+## How to Run
+Step 1 – Fetch & Process Features
+                  python fetch_features.py
+                  python db_feature_engineering.py
 
-**customers table**
+Step 2 – Train ML Model
+                 python ml_model.py
 
-| Column       | Type    | Description                  |
-|-------------|--------|------------------------------|
-| customer_id | INT    | Unique ID for customer       |
-| age         | INT    | Customer age                 |
-| city        | TEXT   | Customer city                |
-| account_type| TEXT   | Account type (savings/checking)|
+Step 3 – Make Predictions
+                  python run_risk_analysis.py
+Note : Predictions are saved in PostgreSQL and predictions.csv.
 
-**accounts table**
 
-| Column       | Type    | Description                  |
-|-------------|--------|------------------------------|
-| account_id  | INT    | Unique ID for account        |
-| customer_id | INT    | Linked customer ID           |
-| balance     | FLOAT  | Current balance              |
-| risk_score  | FLOAT  | Original risk score          |
+## ML Pipeline Flow 
+          +-----------------+
+        | Fetch Data      | <- PostgreSQL
+        +-----------------+
+                 |
+                 v
+        +-----------------+
+        | Feature Engg    | <- Encode, aggregate transactions
+        +-----------------+
+                 |
+                 v
+        +-----------------+
+        | Split Features  | <- X / y
+        +-----------------+
+                 |
+                 v
+        +-----------------+
+        | Train Model     | <- Logistic Regression / Random Forest
+        +-----------------+
+                 |
+                 v
+        +-----------------+
+        | Save Model/Scaler
+        +-----------------+
+                 |
+                 v
+        +-----------------+
+        | Predict New Data| <- run_risk_analysis.py
+        +-----------------+
+                 |
+                 v
+        +-----------------+
+        | Save Predictions| <- PostgreSQL & CSV
+        +-----------------+
 
-**transactions table**
-
-| Column         | Type    | Description                 |
-|----------------|--------|-----------------------------|
-| transaction_id | INT    | Unique ID for transaction   |
-| customer_id    | INT    | Linked customer ID          |
-| amount         | FLOAT  | Transaction amount          |
-| transaction_date | DATE | Date of transaction         |
-| category       | TEXT   | Transaction category        |
-
-**predictions table** (created by pipeline)
-
-| Column                 | Type  | Description                     |
-|------------------------|-------|---------------------------------|
-| customer_id            | INT   | Customer ID                     |
-| high_risk_prediction   | INT   | 1 = High Risk, 0 = Low Risk     |
-
----
-
-##  Pipeline Flow
-
-```text
-PostgreSQL (customers, accounts, transactions)
-          │
-          ▼
-   Fetch & Feature Engineering
-          │
-          ▼
-   Logistic Regression Model
-          │
-          ▼
-Predictions stored back in PostgreSQL
 
