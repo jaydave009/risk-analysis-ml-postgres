@@ -1,0 +1,56 @@
+customer_id,age,city,account_type,balance,risk_score,total_transaction,avg_transaction,transaction_count,city_encoded,account_type_encoded,high_risk_prediction
+1,28,New York,savings,15000.0,0.3,700.0,350.0,2,33,1,0
+2,35,Los Angeles,checking,50000.0,0.8,1000.0,1000.0,1,22,0,1
+3,42,Chicago,savings,20000.0,0.6,150.0,150.0,1,6,1,0
+4,30,Houston,checking,70000.0,0.9,2000.0,2000.0,1,19,0,1
+5,50,Phoenix,savings,12000.0,0.2,100.0,100.0,1,37,1,0
+6,26,Boston,savings,18000.0,0.4,1700.0,850.0,2,4,1,0
+7,40,Seattle,checking,75000.0,0.85,5500.0,2750.0,2,49,0,1
+8,33,Miami,savings,22000.0,0.3,400.0,400.0,1,25,1,0
+9,55,Dallas,checking,90000.0,0.9,4500.0,4500.0,1,11,0,1
+10,29,Denver,savings,14000.0,0.2,600.0,600.0,1,12,1,0
+11,45,Atlanta,checking,65000.0,0.8,2800.0,2800.0,1,0,0,1
+12,38,San Jose,savings,25000.0,0.4,700.0,700.0,1,45,1,0
+13,60,San Diego,checking,85000.0,0.88,5200.0,5200.0,1,44,0,1
+14,24,Austin,savings,12000.0,0.15,300.0,300.0,1,1,1,0
+15,50,Orlando,checking,70000.0,0.82,2600.0,2600.0,1,35,0,1
+16,34,Tampa,savings,28000.0,0.35,,,0,53,1,0
+17,41,Portland,checking,60000.0,0.78,,,0,39,0,0
+18,27,Nashville,savings,16000.0,0.25,,,0,32,1,0
+19,58,Detroit,checking,95000.0,0.92,,,0,14,0,1
+20,31,Columbus,savings,21000.0,0.3,,,0,9,1,0
+21,48,Cleveland,checking,72000.0,0.85,,,0,8,0,1
+22,36,Cincinnati,savings,26000.0,0.45,,,0,7,1,0
+23,52,Pittsburgh,checking,83000.0,0.87,,,0,38,0,0
+24,28,Madison,savings,13000.0,0.2,,,0,24,1,0
+25,43,Minneapolis,checking,69000.0,0.8,,,0,27,0,1
+26,39,St Louis,savings,24000.0,0.4,,,0,50,1,0
+27,61,Kansas City,checking,98000.0,0.93,,,0,20,0,1
+28,35,Omaha,savings,23000.0,0.38,,,0,34,1,0
+29,47,Lincoln,checking,67000.0,0.79,,,0,21,0,1
+30,32,Des Moines,savings,20000.0,0.3,,,0,13,1,0
+31,54,Boise,checking,88000.0,0.9,,,0,3,0,1
+32,29,Reno,savings,15000.0,0.25,,,0,41,1,0
+33,46,Fresno,checking,74000.0,0.84,,,0,16,0,1
+34,37,Modesto,savings,26000.0,0.42,,,0,28,1,0
+35,59,Bakersfield,checking,91000.0,0.91,,,0,2,0,1
+36,42,Stockton,savings,30000.0,0.45,,,0,51,1,0
+37,25,Santa Cruz,checking,11000.0,0.15,,,0,47,0,0
+38,51,Salinas,savings,79000.0,0.86,,,0,42,1,0
+39,34,Monterey,checking,28000.0,0.4,,,0,29,0,0
+40,44,Palo Alto,savings,65000.0,0.8,,,0,36,1,0
+41,28,Redwood City,checking,17000.0,0.3,,,0,40,0,0
+42,53,Mountain View,savings,90000.0,0.89,,,0,31,1,0
+43,31,Sunnyvale,checking,24000.0,0.35,,,0,52,0,0
+44,49,Cupertino,savings,76000.0,0.83,,,0,10,1,0
+45,36,Campbell,checking,27000.0,0.4,,,0,5,0,0
+46,57,Gilroy,savings,92000.0,0.92,,,0,17,1,0
+47,23,Morgan Hill,checking,10000.0,0.1,,,0,30,0,0
+48,62,Los Gatos,savings,98000.0,0.95,,,0,23,1,0
+49,41,Saratoga,checking,72000.0,0.85,,,0,48,0,0
+50,35,Milpitas,savings,23000.0,0.38,,,0,26,1,0
+51,58,Union City,checking,89000.0,0.9,,,0,54,0,0
+52,30,Fremont,savings,21000.0,0.32,,,0,15,1,0
+53,44,Hayward,checking,75000.0,0.82,,,0,18,0,1
+54,27,San Mateo,savings,16000.0,0.28,,,0,46,1,0
+55,63,San Bruno,checking,94000.0,0.93,,,0,43,0,0
